@@ -1,11 +1,10 @@
 package lexer
 
-
 import (
 	"testing"
 
 	"github.com/mom0tomo/go-interpreter-book/monkey/token"
-	)
+)
 
 func TestNextToken(t *testing.T) {
 
@@ -20,7 +19,7 @@ let result = add(five, ten);
 5 < 10 > 5;
 `
 	tests := []struct {
-		expectedType token.TokenType
+		expectedType    token.TokenType
 		expectedLiteral string
 	}{
 		{token.LET, "let"},

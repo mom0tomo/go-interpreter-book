@@ -8,22 +8,22 @@ type Token struct {
 }
 
 const (
-	ILLEGAL   = "ILLEGAL"
-	EOF       = "EOF"
+	ILLEGAL = "ILLEGAL"
+	EOF     = "EOF"
 
 	// 識別子 + リテラル
-	IDENT     = "IDENT" // add, foobar, x, y, ...
-	INT       = "INT"   // 1343456
+	IDENT = "IDENT" // add, foobar, x, y, ...
+	INT   = "INT"   // 1343456
 
 	// 演算子
-	ASSIGN    = "="
-	PLUS      = "+"
-	MINUS = "-"
-	BANG = "!"
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	BANG     = "!"
 	ASTERISK = "*"
-	SLASH = "/"
-	LT ="<"
-	GT =">"
+	SLASH    = "/"
+	LT       = "<"
+	GT       = ">"
 
 	// デリミタ
 	COMMA     = ","
@@ -34,18 +34,18 @@ const (
 	RBRACE    = "}"
 
 	// キーワード
-	FUNCTION  = "FUNCTION"
-	LET       = "LET"
+	FUNCTION = "FUNCTION"
+	LET      = "LET"
 )
 
-var keywords = map[string] TokenType {
-	"fn": FUNCTION,
+var keywords = map[string]TokenType{
+	"fn":  FUNCTION,
 	"let": LET,
 }
 
 // keywordsテーブルをチェックして、渡された識別子が実はキーワードではなかったかを確認する
 func LookupIdent(ident string) TokenType {
-	if tok, ok := keywords[ident] ; ok {
+	if tok, ok := keywords[ident]; ok {
 		return tok
 	}
 	return IDENT
