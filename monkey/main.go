@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/mom0tomo/go-interpreter-book/monkey/repl"
 	"os"
 	"os/user"
+
+	"github.com/mom0tomo/go-interpreter-book/monkey/repl"
 )
 
 func main() {
@@ -12,8 +13,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Hello %s! This is the Monkey programming language!\n",
-		user.Username)
-	fmt.Printf("Feel free to type in commands\n")
+
+	fmt.Printf("Hello %s! This is the Monkey programming language!\n", user.Username)
+	fmt.Println("Feel free to type in commands")
 	repl.Start(os.Stdin, os.Stdout)
 }
